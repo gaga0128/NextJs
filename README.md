@@ -10,7 +10,7 @@ All examples work client and server site, with and without a JavaScript capable 
 
 ## Demo
 
-You can try it out at https://nextjs-starter-gjimnobcab.now.sh
+You can try it out at https://nextjs-starter-vqccclkzqa.now.sh
 
 The demo is hosted on Next.js creators [Ziet's](https://zeit.co) cloud platform.
 
@@ -30,7 +30,7 @@ To get started in development mode, just clone the repository and run:
 If you wanted to run this site in production run:
 
     npm install
-    npm run build
+    npm build
     npm start
 
 You should run the the build step again any time you make changes to pages or
