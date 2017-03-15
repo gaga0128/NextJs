@@ -1,7 +1,7 @@
 /**
  * Add routes for authentication
  *
- * Also sets up dependancies for authentication:
+ * Also sets up dependencies for authentication:
  * - Adds sessions support to Express (with HTTP only cookies for security)
  * - Configures session store (defaults to a flat file store in /tmp/sessions)
  * - Adds protection for Cross Site Request Forgery attacks to all POST requests
@@ -133,7 +133,7 @@ exports.configure = ({
           if (err) {
             throw err
           }
-          
+
           sendVerificationEmail({
             mailserver: mailserver,
             fromEmail: 'noreply@' + req.headers.host.split(':')[0],
@@ -215,5 +215,5 @@ function sendVerificationEmail({mailserver, fromEmail, toEmail, url}) {
       console.log('Error sending email to ' + toEmail, err)
     }
   })
-  //console.log('Generated sign in link ' + url + ' for ' + toEmail)
+  // console.log('Generated sign in link ' + url + ' for ' + toEmail)
 }
