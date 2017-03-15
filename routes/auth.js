@@ -1,7 +1,7 @@
 /**
  * Add routes for authentication
  *
- * Also sets up dependencies for authentication:
+ * Also sets up dependancies for authentication:
  * - Adds sessions support to Express (with HTTP only cookies for security)
  * - Configures session store (defaults to a flat file store in /tmp/sessions)
  * - Adds protection for Cross Site Request Forgery attacks to all POST requests
@@ -168,7 +168,7 @@ exports.configure = ({
     // Look up user by token
     User.one({token: req.params.token}, function (err, user) {
       if (err) {
-        return res.redirect(path + '/error')
+        return res.redirect(path + '/error/email')
       }
       if (user) {
         // Reset token and mark as verified
@@ -177,18 +177,18 @@ exports.configure = ({
         user.save(function (err) {
           // @TODO Improve error handling
           if (err) {
-            return res.redirect(path + '/error')
+            return res.redirect(path + '/error/email')
           }
           // Having validated to the token, we log the user with Passport
           req.logIn(user, function (err) {
             if (err) {
-              return res.redirect(path + '/error')
+              return res.redirect(path + '/error/email')
             }
             return res.redirect(path + '/success')
           })
         })
       } else {
-        return res.redirect(path + '/error')
+        return res.redirect(path + '/error/email')
       }
     })
   })
